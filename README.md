@@ -7,15 +7,19 @@ Bu depo, siber güvenliğe yeni başlayanlar için **temel işletim sistemi bece
   - Dosya sistemi, temel komutlar (`ls`, `pwd`, `cd`, `echo`, `cat`, `history`), komut yardım mekanizmaları (`man`, `--help`, `type`, `which`), terminal verimlilik kısayolları.
 - **Hafta 04 – Bash Scripting:** 
   - Shebang, çalıştırma izinleri, değişkenler, `$(komut)` ile komut çıktısı kullanma, koşullar (`if`), döngüler (`for`, `while`), basit etkileşim (`read`).
+- **Hafta 05 - Pentesting:** 
+  - Pentesting temelleri: metodoloji, ağ keşfi ve tarama, zafiyetli laboratuvar kurulumu ve ilk exploit denemeleri.
 
 ## Hızlı Başlangıç
+
 1. Linux ortamı veya WSL açın.
 2. Terminalde temel komutları deneyin: `pwd`, `ls -la`, `whoami`, `history`.
 3. İlk Bash scriptinizi oluşturun:
-	```bash
-	nano hello.sh
-	#!/usr/bin/bash
-	echo "Merhaba, $(whoami)!"
-	chmod +x hello.sh
-	./hello.sh
-	```
+
+```bash
+nano hello.sh
+#!/usr/bin/bash
+echo "Merhaba, $(whoami)!"
+chmod +x hello.sh
+./hello.sh
+```
