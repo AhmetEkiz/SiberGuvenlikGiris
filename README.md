@@ -1,5 +1,7 @@
 # Siber Güvenlik Giriş 🛡️
 
+Canlı Dökümantasyon Web Sayfası: https://ahmetekiz.github.io/SiberGuvenlikGiris/
+
 Bu depo, siber güvenliğe yeni başlayanlar için **temel işletim sistemi becerileri** ve **otomasyon mantığını** adım adım kazandırmayı amaçlar. İlk haftalar Linux komut satırı hakimiyeti ve Bash ile betik yazma (scripting) temellerine odaklanır; sonraki haftalarda güvenlik odaklı uygulamalara (ağ tarama, log analizi, temel zafiyet kavramları, otomasyon senaryoları) geçilecek.
 
 ## Mevcut Bölümler

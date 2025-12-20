@@ -1,7 +1,5 @@
 # **Bash Scripting**
 
----
-
 ## 1. Nedir?
 
 ## $ Bash ve Bash Scripting
