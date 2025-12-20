@@ -1,0 +1,22 @@
+site_name: Siber Güvenliğe Giriş Kursu Notları
+site_url: https://AhmetEkiz.github.io/SiberGuvenlikGiris/
+
+
+theme:
+  name: material
+
+nav:
+  - Giriş: index.md
+  - Hafta 3 - Linux Temelleri:
+      - Linux Komutlar: Hafta03-Linux_Temelleri/03_01_Linux_Komutlar.md
+      - Linux Dosya ve Kullanıcı Sistemi: Hafta03-Linux_Temelleri/03_02_Linux_Dosya_ve_Kullanıcı_Sistemi.md
+  - Hafta 4 - Bash Scripting:
+      - Bash Scripting: Hafta04-bash_scripting/04_02_Bash Scripting.md
+  - Hafta 5 - Pentesting:
+      - Etik Hacker Metodolojisi: Hafta05-pentesting/05_01_Etik_Hacker_Metodolojisi.md
+      - Zafiyetli Makine Kurulumu: Hafta05-pentesting/05_02_Zafiyetli_Makine_Kurulumu.md
+      - Ağ Tarama: Hafta05-pentesting/05_03_AgTarama.md
+      - Sonuçları İncelemek: Hafta05-pentesting/05_04_Sonuclari_Incelemek.md
+      - İlk Hack ve Erişim Sağlamak: Hafta05-pentesting/05_05_Ilk_Hack_ve_Erisim_Saglamak.md
+  - Hafta 6 - Web Güvenliği:
+      - Web Güvenliğine Giriş: Hafta06-WebGuvenligi/06_01_WebGuvenligineGiris.md
