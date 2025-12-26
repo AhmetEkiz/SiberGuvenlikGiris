@@ -6,13 +6,13 @@
 
 Web güvenliğini anlamak için önce web uygulamasının nasıl çalıştığını doğru kavramak gerekir.
 
-### Temel aktörler:
+### Temel aktörler
 
 - **İstemci (Client):** Genellikle tarayıcı. Kullanıcıdan aldığı girdiyi HTTP üzerinden sunucuya iletir.
 - **Sunucu (Server):** İş mantığını yürütür; veri tabanıyla görüşür, doğrulama yapar, yanıt üretir.
 - **Veri Tabanı (Database):** Uygulamanın dinamik içeriklerini ve kullanıcı verilerini saklar.
 
-### Akış:
+### Akış
 
 1. Kullanıcı tarayıcıdan bir istek gönderir (HTTP request).
 2. Sunucu isteği alır, işler, gerekirse veri tabanı ile iletişim kurar.
@@ -27,24 +27,24 @@ Bu akışın her aşaması saldırı yüzeyi oluşturur.
 
 Web uygulaması güvenliği, HTTP’nin çalışma mantığını bilmeden anlaşılamaz.
 
-### HTTP Request Bileşenleri:
+### HTTP Request Bileşenleri
 
 - **Method:** GET, POST, PUT, DELETE vb.
 - **Headers:** Cookie, User-Agent, Authorization, Content-Type vb.
 - **Body:** Form verileri, JSON payload vb.
 
-### HTTP Response Bileşenleri:
+### HTTP Response Bileşenleri
 
 - Status code (200, 302, 404, 500)
 - Headers (Set-Cookie, Content-Type)
 - Body (HTML, JSON, dosya içerikleri)
 
-### GET vs POST:
+### GET vs POST
 
 - **GET:** Parametreler URL üzerinde görünür. Genellikle sorgulamalar için.
 - **POST:** Veri gövde içinde iletilir. Genellikle hassas veri gönderimi için.
 
-### Stateless Mantığı:
+### Stateless Mantığı
 
 HTTP *durumsuz* bir protokoldür; her istek bağımsızdır. Oturum yönetimi bu nedenle **cookie**, **session**, **token** gibi mekanizmalarla sağlanır.
 
@@ -52,7 +52,7 @@ HTTP *durumsuz* bir protokoldür; her istek bağımsızdır. Oturum yönetimi bu
 
 ## 1.3. Cookie, Session, Token Temelleri
 
-### Cookie:
+### Cookie
 
 Tarayıcıda saklanan küçük veri parçaları.
 
@@ -64,11 +64,11 @@ Genellikle oturum kimliği taşır (session ID).
 - **Secure:** Sadece HTTPS üzerinden gönderilir.
 - **SameSite:** CSRF riskini azaltır.
 
-### Session:
+### Session
 
 Sunucu tarafında saklanan kullanıcıya ait durum bilgisidir. Tarayıcıdaki cookie genelde session ID taşır.
 
-### Token:
+### Token
 
 Genellikle API güvenliği ve modern uygulamalarda kullanılır (JWT gibi).
 
@@ -86,7 +86,7 @@ Tarayıcı mekanizmalarını bilmek, XSS, CSRF ve benzeri saldırıları anlamay
 
 ---
 
-# 2. Web Zafiyetlerinin Sınıflandırılması (OWASP Top 10 Çerçevesi)
+## 2. Web Zafiyetlerinin Sınıflandırılması (OWASP Top 10 Çerçevesi)
 
 ---
 
@@ -98,7 +98,7 @@ Bu bölümde zafiyet türlerini kavramsal olarak ele alıyoruz. Uygulamalı örn
 
 OWASP’ın en bilinen çıktısı **OWASP Top 10** listesidir.
 
-## OWASP Top 10’un Tanımı:
+## OWASP Top 10’un Tanımı
 
 **OWASP Top 10**, dünya çapında gerçek saldırı verileri, güvenlik araştırmaları ve kurumsal geri bildirimler analiz edilerek hazırlanan, web uygulamalarında en kritik güvenlik risklerinin sıralandığı bir rehberdir.
 
@@ -127,68 +127,53 @@ Ardından gelecek “Web Zafiyetlerinin Sınıflandırılması” bölümü tam 
 
 ## 2.1. Broken Access Control (Erişim Kontrolünün Kırılması)
 
-### Tanım:
+**Tanım:** Kullanıcıların yetkisi olmayan işlemleri yapabilmesi.
 
-Kullanıcıların yetkisi olmayan işlemleri yapabilmesi.
-
-### Örnekler:
+**Örnekler:**
 
 - Yetkisiz bir kullanıcının admin paneline erişebilmesi
 - IDOR (Insecure Direct Object Reference):
-    
+
     `/user?id=1001` parametresini değiştirip başka kullanıcıya erişmek
-    
 
-### Etki:
-
-Yetkisiz veri erişimi, veri sızıntısı, hesap devralma.
+**Etki:** Yetkisiz veri erişimi, veri sızıntısı, hesap devralma.
 
 ---
 
 ## 2.2. Cryptographic Failures (Kriptografik Hatalar)
 
-### Tanım:
+**Tanım:** Hatalı şifreleme uygulamaları, hassas verilerin korunmaması.
 
-Hatalı şifreleme uygulamaları, hassas verilerin korunmaması.
-
-### Örnekler:
+**Örnekler:**
 
 - Verilerin düz metin olarak tutulması
 - Zayıf şifreleme algoritmaları (MD5, SHA1)
 - Hatalı TLS yapılandırması
 
-### Etki:
-
-Şifre sızıntısı, MITM saldırıları, veri bütünlüğünün bozulması.
+**Etki:** Şifre sızıntısı, MITM saldırıları, veri bütünlüğünün bozulması.
 
 ---
 
 ## 2.3. Injection (Enjeksiyon Saldırıları)
 
-### Tanım:
+**Tanım:** Kullanıcı girdisinin güvenli işlenmemesi sonucu sorgulara kötü amaçlı kod sokulması.
 
-Kullanıcı girdisinin güvenli işlenmemesi sonucu sorgulara kötü amaçlı kod sokulması.
-
-### Yaygın türler:
+### Yaygın türler
 
 - **SQL Injection**
 - **Command Injection**
 - **LDAP Injection**
 - **NoSQL Injection**
 
-### Etki:
-
-Veri ihlali, sistem kontrolünün ele geçirilmesi.
+**Etki:** Veri ihlali, sistem kontrolünün ele geçirilmesi.
 
 ---
 
 ## 2.4. Insecure Design (Güvensiz Tasarım)
 
-### Tanım:
+**Tanım:** Daha kod yazılmadan tasarım seviyesinde yapılan hata veya eksiklikler.
 
-Daha kod yazılmadan tasarım seviyesinde yapılan hata veya eksiklikler.
-
-### Örnekler:
+**Örnekler:**
 
 - Rate-limiting olmaması
 - Yetersiz doğrulama akışları
@@ -198,11 +183,9 @@ Daha kod yazılmadan tasarım seviyesinde yapılan hata veya eksiklikler.
 
 ## 2.5. Security Misconfiguration (Güvenlik Yanlış Yapılandırmaları)
 
-### Tanım:
+**Tanım:**Uygulama, sunucu veya bileşenlerin yanlış, eksik, default ayarlarla çalışması.
 
-Uygulama, sunucu veya bileşenlerin yanlış, eksik, default ayarlarla çalışması.
-
-### Örnekler:
+**Örnekler:**
 
 - Varsayılan şifrelerin değiştirilmemesi
 - Gereksiz servislerin açık olması
@@ -212,11 +195,9 @@ Uygulama, sunucu veya bileşenlerin yanlış, eksik, default ayarlarla çalışm
 
 ## 2.6. Vulnerable and Outdated Components (Zafiyetli/Eski Bileşenler)
 
-### Tanım:
+**Tanım:**Güncellenmemiş kütüphane ve sistemlerin kullanılması.
 
-Güncellenmemiş kütüphane ve sistemlerin kullanılması.
-
-### Örnekler:
+**Örnekler:**
 
 - Eski jQuery sürümü
 - Zafiyetli framework versiyonları
@@ -226,7 +207,7 @@ Güncellenmemiş kütüphane ve sistemlerin kullanılması.
 
 ## 2.7. Identification & Authentication Failures (Kimlik Doğrulama Hataları)
 
-### Örnekler:
+**Örnekler:**
 
 - Zayıf parola politikaları
 - MFA kullanılmaması
@@ -237,7 +218,7 @@ Güncellenmemiş kütüphane ve sistemlerin kullanılması.
 
 ## 2.8. Software & Data Integrity Failures (Yazılım/Veri Bütünlüğü Hataları)
 
-### Örnekler:
+**Örnekler:**
 
 - İmzalanmamış güncellemeler
 - Manipüle edilebilen CI/CD pipeline
@@ -247,24 +228,20 @@ Güncellenmemiş kütüphane ve sistemlerin kullanılması.
 
 ## 2.9. Security Logging & Monitoring Failures (Kayıt ve İzleme Hataları)
 
-### Örnekler:
+**Örnekler:**
 
 - Güvenlik olaylarının kaydedilmemesi
 - Logların merkezi izlenmemesi
 - Uyarı mekanizmalarının olmaması
 
-### Etki:
-
-Saldırının tespiti gecikir; hasar büyür.
+**Etki:** Saldırının tespiti gecikir; hasar büyür.
 
 ---
 
 ## 2.10. Server-Side Request Forgery (SSRF)
 
-### Tanım:
+**Tanım:**Sunucunun saldırgan tarafından yönlendirilen bir isteği iç ağdaki veya dıştaki başka bir kaynağa göndermesi.
 
-Sunucunun saldırgan tarafından yönlendirilen bir isteği iç ağdaki veya dıştaki başka bir kaynağa göndermesi.
-
-### Örnek:
+**Örnek:**
 
 Bir URL parametresi üzerinden sunucunun iç IP adreslerini taraması.

@@ -1,8 +1,6 @@
 # 06.03. Burp Suite Nedir?
 
----
-
-# 1. Burp Suite Nedir?
+## 1. Burp Suite Nedir?
 
 **Burp Suite**, web uygulamalarının güvenlik testlerini (Web Pentest) yapmak için kullanılan, sektör standardı bir **entegre web güvenliği test platformudur**. [PortSwigger](https://portswigger.net/) tarafından geliştirilmiştir ve hem **manuel** hem de **yarı otomatik** testler için kullanılır.
 
@@ -14,7 +12,7 @@ Temel olarak Burp Suite:
 
 Etik hacker’lar, sızma testi uzmanları ve güvenlik ekipleri tarafından yaygın şekilde kullanılır.
 
-# 2. Burp Suite Hangi Amaçlarla Kullanılır?
+## 2. Burp Suite Hangi Amaçlarla Kullanılır?
 
 - Kimlik doğrulama (authentication) ve yetkilendirme (authorization) testleri
 - SQL Injection, XSS, CSRF gibi web zafiyetlerinin analizi
@@ -22,7 +20,7 @@ Etik hacker’lar, sızma testi uzmanları ve güvenlik ekipleri tarafından yay
 - Oturum (session) yönetimi testleri
 - API güvenlik testleri
 
-## 2.1. Burp Suite ile Tespit Edilebilecek Yaygın Zafiyetler
+### 2.1. Burp Suite ile Tespit Edilebilecek Yaygın Zafiyetler
 
 - **SQL Injection:**
     - Uygulamanın kullanıcı girdilerini filtrelemeden SQL sorgularına eklemesi sonucu, saldırganın veritabanı sorgularını manipüle edebilmesidir. Yetkisiz veri okuma, veri silme veya admin erişimi ile sonuçlanabilir.
@@ -39,7 +37,7 @@ Etik hacker’lar, sızma testi uzmanları ve güvenlik ekipleri tarafından yay
 
 ---
 
-# 3. Burp Suite Sürümleri
+## 3. Burp Suite Sürümleri
 
 | Sürüm | Özellik |
 | --- | --- |
@@ -49,17 +47,17 @@ Etik hacker’lar, sızma testi uzmanları ve güvenlik ekipleri tarafından yay
 
 Bu tutorial **Burp Suite Community** üzerinden ilerlemektedir.
 
-# 4. Burp Suite Temel Bileşenleri
+## 4. Burp Suite Temel Bileşenleri
 
-## 4.1. Proxy
+### 4.1. Proxy
 
 Burp Suite’in çekirdeğidir. Tarayıcı ile web uygulaması(web sitesi) arasına girerek tüm HTTP/HTTPS trafiğini yakalar, durdurur(intercept) ve değiştirmenizi sağlar.
 
 ![./imgs/06_03/image.png](./imgs/06_03/image.png)
 
-https://www.geeksforgeeks.org/computer-networks/what-is-proxy-server/
+[Proxy Server — GeeksforGeeks](https://www.geeksforgeeks.org/computer-networks/what-is-proxy-server/)
 
-**Proxy kavramı nedir:** [06.04.01. Proxy Nedir?](06_04_01_ProxyNedir.md) 
+**Proxy kavramı nedir:** [06.03.01. Proxy Nedir?](06_03_01_ProxyNedir.md)
 
 **Teknik İşlevi:**
 
@@ -76,7 +74,7 @@ https://www.geeksforgeeks.org/computer-networks/what-is-proxy-server/
 
 Intercept açıkken istek akışı manuel kontrol altındadır.
 
-## 4.2. Target
+### 4.2. Target
 
 Hedef uygulamanın tüm yüzeyini analiz etmek için kullanılır. Proxy üzerinden geçen tüm endpoint’ler otomatik olarak haritalanır.
 
@@ -91,7 +89,7 @@ Hedef uygulamanın tüm yüzeyini analiz etmek için kullanılır. Proxy üzerin
 - Endpoint, parametre ve metod analizi
 - Test kapsamının (scope) belirlenmesi
 
-## 4.3. Repeater
+### 4.3. Repeater
 
 - Tek bir HTTP isteğini defalarca gönderip, küçük değişikliklerle response farklarını gözlemlemenizi sağlar.
 
@@ -110,7 +108,7 @@ Hedef uygulamanın tüm yüzeyini analiz etmek için kullanılır. Proxy üzerin
 
 Manuel zafiyet doğrulamanın en güçlü aracıdır.
 
-## 4.4. Intruder
+### 4.4. Intruder
 
 - Parametre bazlı otomatik saldırılar için kullanılır. Fuzzing ve brute force senaryolarının merkezidir.
 
@@ -129,7 +127,7 @@ Manuel zafiyet doğrulamanın en güçlü aracıdır.
 
 Community sürümünde hız kısıtlıdır, ancak mantık aynıdır.
 
-## 4.5. Decoder
+### 4.5. Decoder
 
 - Veri dönüştürme ve çözümleme aracıdır.
 
@@ -147,7 +145,7 @@ Community sürümünde hız kısıtlıdır, ancak mantık aynıdır.
 
 Özellikle token ve cookie analizlerinde kullanılır.
 
-## 4.6. Comparer
+### 4.6. Comparer
 
 İki veya daha fazla request/response arasındaki farkları byte seviyesinde karşılaştırır.
 
@@ -164,7 +162,7 @@ Community sürümünde hız kısıtlıdır, ancak mantık aynıdır.
 
 Küçük farkların büyük zafiyetleri ortaya çıkardığı yer burasıdır.
 
-# 5. Kısa Özet
+## 5. Kısa Özet
 
 Burp Suite → **gör, değiştir, tekrar gönder, karşılaştır** prensibiyle çalışır.
 
@@ -177,12 +175,11 @@ Proxy + Repeater → manuel pentest’in omurgasıdır.
 5. **Comparer** → Sonuçları kıyasla
 6. **Decoder** → Token / veri çöz
 
+## 6. Önemli Kaynaklar
 
-# 6. Önemli Kaynaklar
-
-- https://www.beyaz.net/tr/guvenlik/makaleler/burp_suite_nedir.html
-- https://tryhackme.com/room/burpsuitebasics
-    - **TryHackMe:** Ücretli ve ücretsiz rehberlerin olduğu interaktif platform TryHackMe’nin ücretli Burp Suite Başlangıç Eğitimi
-- https://www.kalilinuxlogs.com/2025/07/burp-suite-web-proxy.html
-- https://www.geeksforgeeks.org/ethical-hacking/what-is-burp-suite/
-- https://www.bugcrowd.com/blog/the-ultimate-beginners-guide-to-burp-suite/
+- [Burp Suite Nedir? — Beyaz.net](https://www.beyaz.net/tr/guvenlik/makaleler/burp_suite_nedir.html)
+- [Burp Suite Basics — TryHackMe](https://tryhackme.com/room/burpsuitebasics)
+  - **TryHackMe:** Ücretli ve ücretsiz rehberlerin olduğu interaktif platform TryHackMe’nin ücretli Burp Suite Başlangıç Eğitimi
+- [Burp Suite Web Proxy — KaliLinuxLogs](https://www.kalilinuxlogs.com/2025/07/burp-suite-web-proxy.html)
+- [What is Burp Suite? — GeeksforGeeks](https://www.geeksforgeeks.org/ethical-hacking/what-is-burp-suite/)
+- [The Ultimate Beginner's Guide to Burp Suite — Bugcrowd](https://www.bugcrowd.com/blog/the-ultimate-beginners-guide-to-burp-suite/)

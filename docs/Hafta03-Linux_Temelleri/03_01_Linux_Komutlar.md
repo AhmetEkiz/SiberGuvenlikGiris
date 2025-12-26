@@ -30,31 +30,31 @@ Araştırma Sorusu: Debian tabanlı ne demektir?
 
 - GUI (Graphical User Interface): Görsel arayüz (pencereler, ikonlar).
 - CLI (Command Line Interface): Komut satırı.
-    
-    → Siber güvenlikte **CLI tercih edilir**, çünkü:
-    
-    - Otomasyon mümkündür (bash scriptler),
-    - Ağ üzerinde uzaktan yönetim kolaydır (SSH),
-    - Log analizi, ağ taraması gibi işlemler terminal komutlarıyla yapılır.
+
+→Siber güvenlikte **CLI tercih edilir**, çünkü:
+
+- Otomasyon mümkündür (bash scriptler),
+- Ağ üzerinde uzaktan yönetim kolaydır (SSH),
+- Log analizi, ağ taraması gibi işlemler terminal komutlarıyla yapılır.
 
 **Uygulama (Terminal Açılışı):**
 
 - Öğrencilere terminal açtır:
-    
-    ```bash
-    Ctrl + Alt + T
-    
-    # Output:
-    # user@kali:~$
-    ```
-    
-    - `user`: oturum açan kullanıcı
-    - `@`: ayraç
-    - `kali`: makine adı
-    - `~`: home dizinini temsil eder
-    - `$`: normal kullanıcı (root olsaydı `#` olurdu)
 
-### ⚡ 1.2.1  Linux terminal (bash) klavye kısayolları:
+`Ctrl + Alt + T`
+
+```bash
+# Output:
+# user@kali:~$
+```
+
+- `user`: oturum açan kullanıcı
+- `@`: ayraç
+- `kali`: makine adı
+- `~`: home dizinini temsil eder
+- `$`: normal kullanıcı (root olsaydı `#` olurdu)
+
+### ⚡ 1.2.1  Linux terminal (bash) klavye kısayolları
 
 En çok kullanılan **bash terminal kısayolları**
 
@@ -94,13 +94,13 @@ En çok kullanılan **bash terminal kısayolları**
 
 ### 📄 **1.3.2 Dosya Görüntüleme ve İçerik Komutları**
 
-| Komut |  | Açıklama | Kullanım |
+| Komut | | Açıklama | Kullanım |
 | --- | --- | --- | --- |
 | `cat` | View the contents of a file. | Dosya içeriğini gösterir. | `cat notes.txt` |
-| `less` |  | Uzun dosyaları sayfa sayfa gösterir. | `less /etc/passwd` |
-| `head` |  | Dosyanın ilk 10 satırını gösterir. | `head file.log` |
-| `tail` |  | Son 10 satırı gösterir. | `tail file.log` |
-| `echo` |  | Ekrana veya dosyaya yazı yazar. | `echo "Merhaba Linux"` |
+| `less` | | Uzun dosyaları sayfa sayfa gösterir. | `less /etc/passwd` |
+| `head` | | Dosyanın ilk 10 satırını gösterir. | `head file.log` |
+| `tail` | | Son 10 satırı gösterir. | `tail file.log` |
+| `echo` | | Ekrana veya dosyaya yazı yazar. | `echo "Merhaba Linux"` |
 
 ### 🔍 **1.3.3 Bilgi Alma Komutları**
 
@@ -183,13 +183,12 @@ Siber güvenlikte **bilgiye hızlı erişim ve self-learning (kendi kendine öğ
 
 CheatSheet’ler: Online ve Offline(PDF, image vb.) şeklinde kopya kağıdı denen şeyler mevcut.
 
-İnternette “Linux CheatSheet” olarak arayabilirsiniz. Web sayfası olarak bir kaç örnek: 
+İnternette “Linux CheatSheet” olarak arayabilirsiniz. Web sayfası olarak bir kaç örnek:
 
-- https://www.geeksforgeeks.org/linux-unix/linux-commands-cheat-sheet/
-- https://hostafrica.co.za/blog/linux/linux-commands/
+- [https://www.geeksforgeeks.org/linux-unix/linux-commands-cheat-sheet/](https://www.geeksforgeeks.org/linux-unix/linux-commands-cheat-sheet/)
+- [https://hostafrica.co.za/blog/linux/linux-commands/](https://hostafrica.co.za/blog/linux/linux-commands/)
 
-> Chatgpt vb. araçlara danışmadan buradan kendi çabamızla bulmak öğrenmemizi pekişitirir.
-> 
+> Chatgpt vb. araçlara danışmadan, bu ve benzeri dökümanlardan kendi çabamızla bulmak öğrenmemizi pekişitirir.
 
 ## 🧪 **1.4 Uygulamalı Alıştırma**
 

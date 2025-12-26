@@ -41,7 +41,7 @@ ls
 
 ## 🔐 **2.2 Dosya İzinleri (rwx) Mantığı**
 
-🔗 https://www.redhat.com/en/blog/linux-file-permissions-explained
+🔗 [https://www.redhat.com/en/blog/linux-file-permissions-explained](https://www.redhat.com/en/blog/linux-file-permissions-explained)
 
 Linux’ta her dosyanın **üç ayrı kullanıcı tipi** için izinleri vardır:
 
@@ -76,7 +76,7 @@ ls -l
 
 Çıktı:
 
-```
+```bash
 -rw-r--r-- 1 student student 28 Oct 30 12:40 notes.txt
 ```
 
@@ -90,7 +90,6 @@ ls -l
 Yani:
 
 > Sadece dosya sahibi yazabilir, herkes okuyabilir.
-> 
 
 ---
 
@@ -118,7 +117,7 @@ chmod [izin] [dosya]
 
 ```
 
-### 🔹 Sayısal Yöntem:
+### 🔹 Sayısal Yöntem
 
 ```bash
 chmod 755 script.sh
@@ -131,7 +130,7 @@ chmod 755 script.sh
 - Group: r-x = 4+0+1 = 5
 - Others: r-x = 4+0+1 = 5
 
-### 🔹 Harfsel Yöntem:
+### 🔹 Harfsel Yöntem
 
 ```bash
 chmod u+x file.txt   # Kullanıcıya çalıştırma izni ver
@@ -161,7 +160,7 @@ sudo chgrp admins file.txt
 
 ### 🧪 **Uygulama: Dosya İzni Deneyi**
 
-### Görev:
+### Görev
 
 Bir dosya oluştur, izinlerini değiştir, farklı kullanıcıyla erişmeyi dene.
 
@@ -190,9 +189,8 @@ cat secret.txt
 
 📌 **Beklenen Hata:**
 
-```
+```bash
 cat: secret.txt: Permission denied
-
 ```
 
 💡 **Açıklama:**
@@ -242,13 +240,11 @@ sudo deluser ali
 
 ## ⚡ **2.5 Root Kullanıcısı ve sudo Komutu**
 
-**Anlatım:**
-
 - **root** Linux’taki en güçlü kullanıcıdır.
 - Her şeyi yapabilir — bu da güvenlik riski taşır.
 - Günlük kullanımda **sudo** tercih edilir (super user do).
 
-### 🧩 **Örnek:**
+### 🧩 Örnek
 
 ```bash
 sudo apt update
@@ -270,7 +266,7 @@ cat /etc/shadow
 
 📌 Beklenen çıktı:
 
-```
+```bash
 Permission denied
 ```
 
@@ -286,9 +282,9 @@ sudo cat /etc/shadow
 
 `/etc/shadow` sistemdeki tüm kullanıcıların şifre hash’lerini içerir, bu yüzden sadece root erişebilir.
 
-https://www.cyberciti.biz/faq/understanding-etcshadow-file/
+[https://www.cyberciti.biz/faq/understanding-etcshadow-file/](https://www.cyberciti.biz/faq/understanding-etcshadow-file/)
 
-https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/
+[https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/](https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/)
 
 ---
 
@@ -329,7 +325,6 @@ cat /home/student/gizli.txt
 **Beklenen Sonuç:**
 
 > “Permission denied” hatası alınmalı.
-> 
 
 **Ek Görev:**
 
@@ -348,5 +343,3 @@ Sonra `chmod 644 gizli.txt` yapıp tekrar test edin — artık herkes okuyabilir
 3. Hangi sistem dosyaları sadece root tarafından değiştirilebilir?
 
 Bu bölüm, sızma testlerinde *dosya izinlerini suistimal etme* veya *yanlış yapılandırılmış sistemleri tespit etme* becerisine temel oluşturur.
-
----
