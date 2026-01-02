@@ -4,11 +4,7 @@
 
 Bu repo, siber güvenliğe yeni başlayanlar için **temel işletim sistemi becerileri**, **Siber Güvenlik Araçları**, **otomasyon mantığını** adım adım kazandırmayı amaçlar.
 
-<!-- Insert this tag where you want the widget to render -->
-
-<div style="text-align: center;">
-<iframe width="720" height="432" src="https://cybermap.kaspersky.com/tr/widget/dynamic/dark" frameborder="0"></iframe>
-</div>
+![Anasayfa Banner](../docs/imgs/Banner_generetedbyChatGPT_2.png)
 
 ## Mevcut Bölümler
 
@@ -45,7 +41,3 @@ echo "Merhaba, $(whoami)!"
 chmod +x hello.sh
 ./hello.sh
 ```
-
----
-
-![Anasayfa Banner](../docs/imgs/Banner_generetedbyChatGPT_2.png)
