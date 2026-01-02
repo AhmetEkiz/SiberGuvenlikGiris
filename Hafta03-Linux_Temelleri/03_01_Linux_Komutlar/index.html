@@ -1,0 +1,1827 @@
+
+<!doctype html>
+<html lang="tr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://AhmetEkiz.github.io/SiberGuvenlikGiris/Hafta03-Linux_Temelleri/03_01_Linux_Komutlar/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../03_02_Linux_Dosya_ve_Kullan%C4%B1c%C4%B1_Sistemi/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>3.1. Linux Komutlar - Siber Güvenliğe Giriş Kursu Notları</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bolum-1-linux-komutlar" class="md-skip">
+          Ana içeriğe geç
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Başlık">
+    <a href="../.." title="Siber Güvenliğe Giriş Kursu Notları" class="md-header__button md-logo" aria-label="Siber Güvenliğe Giriş Kursu Notları" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Siber Güvenliğe Giriş Kursu Notları
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3.1. Linux Komutlar
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="amber"  aria-label="switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="darkblue" data-md-color-accent="amber"  aria-label="switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Ara" placeholder="Ara" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Ara">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Temizle" aria-label="Temizle" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Arama başlatılıyor
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AhmetEkiz/SiberGuvenlikGiris" title="Depoya git" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AhmetEkiz/SiberGuvenlikGiris
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigasyon" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Siber Güvenliğe Giriş Kursu Notları" class="md-nav__button md-logo" aria-label="Siber Güvenliğe Giriş Kursu Notları" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Siber Güvenliğe Giriş Kursu Notları
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AhmetEkiz/SiberGuvenlikGiris" title="Depoya git" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AhmetEkiz/SiberGuvenlikGiris
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Giriş
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Linux Temelleri 🐧
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3 - Linux Temelleri 🐧
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.1. Linux Komutlar
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.1. Linux Komutlar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="İçindekiler">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      İçindekiler
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bolumun-ogrenme-hedefleri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Bölümün Öğrenme Hedefleri
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-linuxun-siber-guvenlikteki-onemi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 1.1 Linux’un Siber Güvenlikteki Önemi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-terminale-giris-cli-vs-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💻 1.2 Terminale Giriş – CLI vs GUI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💻 1.2 Terminale Giriş – CLI vs GUI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-linux-terminal-bash-klavye-ksayollar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ 1.2.1 Linux terminal (bash) klavye kısayolları
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-temel-linux-komutlar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ 1.3 Temel Linux Komutları
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ 1.3 Temel Linux Komutları">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-dizin-yonetimi-komutlar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 1.3.1 Dizin Yönetimi Komutları
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-dosya-goruntuleme-ve-icerik-komutlar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📄 1.3.2 Dosya Görüntüleme ve İçerik Komutları
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133-bilgi-alma-komutlar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 1.3.3 Bilgi Alma Komutları
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#134-yaygn-hatalar-ve-acklamalar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 1.3.4 Yaygın Hatalar ve Açıklamaları
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#135-help-komutu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❓ 1.3.5 Help Komutu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#136-neden-help-ls-calsmaz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❓ 1.3.6 Neden help ls çalışmaz?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#137-ls-gibi-komutlar-nasl-calsr-nasl-ogrenebilirim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 1.3.7. ls gibi komutlar nasıl çalışır, nasıl öğrenebilirim?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#138-neden-help-komutu-veya-bu-komutlar-kullanmak-onemli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 1.3.8. Neden help komutu veya bu komutları kullanmak önemli?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#136-peki-bu-kadar-komutu-nereden-bilecegim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗒️ 1.3.6 Peki Bu Kadar Komutu Nereden Bileceğim?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-uygulamal-alstrma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧪 1.4 Uygulamalı Alıştırma
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 1.4 Uygulamalı Alıştırma">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gorev-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Görev 1:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gorev-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Görev 2:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gorev-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Görev 3:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_02_Linux_Dosya_ve_Kullan%C4%B1c%C4%B1_Sistemi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.2. Linux Dosya ve Kullanıcı Sistemi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Bash Scripting ✍🏼
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4 - Bash Scripting ✍🏼
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Hafta04-bash_scripting/04_02_Bash%20Scripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.2. Bash Scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Pentesting 🕵🏼
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5 - Pentesting 🕵🏼
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Hafta05-pentesting/05_01_Etik_Hacker_Metodolojisi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.1. Etik Hacker Metodolojisi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Hafta05-pentesting/05_02_Zafiyetli_Makine_Kurulumu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.2. Zafiyetli Makine Kurulumu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Hafta05-pentesting/05_03_AgTarama/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.3. Ağ Tarama
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Hafta05-pentesting/05_04_Sonuclari_Incelemek/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.4. Sonuçları İncelemek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Hafta05-pentesting/05_05_Ilk_Hack_ve_Erisim_Saglamak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.5. İlk Hack ve Erişim Sağlamak
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Web Güvenliği 🌐
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6 - Web Güvenliği 🌐
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Hafta06-WebGuvenligi/06_01_WebGuvenligineGiris/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.1. Web Güvenliğine Giriş
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Hafta06-WebGuvenligi/06_02_WebPentestAraclariTanitimi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.2. Web Pentest Araçları Tanıtımı
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Hafta06-WebGuvenligi/06_03_BurpSuiteNedir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.3. Burp Suite Nedir?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Hafta06-WebGuvenligi/06_03_01_ProxyNedir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.3.1. Proxy Nedir?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Hafta06-WebGuvenligi/06_04_BurpSuiteLabUygulamalari/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.4. Burp Suite Lab Uygulamaları
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="İçindekiler">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      İçindekiler
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bolumun-ogrenme-hedefleri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Bölümün Öğrenme Hedefleri
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-linuxun-siber-guvenlikteki-onemi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 1.1 Linux’un Siber Güvenlikteki Önemi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-terminale-giris-cli-vs-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💻 1.2 Terminale Giriş – CLI vs GUI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💻 1.2 Terminale Giriş – CLI vs GUI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-linux-terminal-bash-klavye-ksayollar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ 1.2.1 Linux terminal (bash) klavye kısayolları
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-temel-linux-komutlar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ 1.3 Temel Linux Komutları
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ 1.3 Temel Linux Komutları">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-dizin-yonetimi-komutlar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 1.3.1 Dizin Yönetimi Komutları
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-dosya-goruntuleme-ve-icerik-komutlar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📄 1.3.2 Dosya Görüntüleme ve İçerik Komutları
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133-bilgi-alma-komutlar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 1.3.3 Bilgi Alma Komutları
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#134-yaygn-hatalar-ve-acklamalar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 1.3.4 Yaygın Hatalar ve Açıklamaları
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#135-help-komutu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❓ 1.3.5 Help Komutu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#136-neden-help-ls-calsmaz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❓ 1.3.6 Neden help ls çalışmaz?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#137-ls-gibi-komutlar-nasl-calsr-nasl-ogrenebilirim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 1.3.7. ls gibi komutlar nasıl çalışır, nasıl öğrenebilirim?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#138-neden-help-komutu-veya-bu-komutlar-kullanmak-onemli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 1.3.8. Neden help komutu veya bu komutları kullanmak önemli?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#136-peki-bu-kadar-komutu-nereden-bilecegim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗒️ 1.3.6 Peki Bu Kadar Komutu Nereden Bileceğim?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-uygulamal-alstrma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧪 1.4 Uygulamalı Alıştırma
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 1.4 Uygulamalı Alıştırma">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gorev-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Görev 1:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gorev-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Görev 2:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gorev-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Görev 3:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="bolum-1-linux-komutlar"><strong>🧩 BÖLÜM 1 – Linux Komutlar</strong></h1>
+<h2 id="bolumun-ogrenme-hedefleri">🎯 <strong>Bölümün Öğrenme Hedefleri</strong></h2>
+<p>Bu bölümün sonunda öğrenciler:</p>
+<ul>
+<li>Linux’un siber güvenlikte neden tercih edildiğini açıklayabilecek,</li>
+<li>Terminal arayüzünü etkin şekilde kullanabilecek,</li>
+<li>Temel komutlarla dosya sistemi içinde gezinebilecek,</li>
+<li>Basit dosya işlemleri (oluşturma, listeleme, görüntüleme) yapabilecek.</li>
+</ul>
+<h2 id="11-linuxun-siber-guvenlikteki-onemi">📖 <strong>1.1 Linux’un Siber Güvenlikteki Önemi</strong></h2>
+<ul>
+<li>Linux, açık kaynaklı bir işletim sistemidir.</li>
+<li>Siber güvenlikte tercih edilmesinin 3 ana nedeni vardır:<ol>
+<li><strong>Açık Kaynak Kod</strong> → Herkes tarafından denetlenebilir, arka kapı riski düşüktür.</li>
+<li><strong>Terminal Gücü</strong> → Komut satırıyla derin sistem erişimi sağlar.</li>
+<li><strong>Dağıtım Esnekliği</strong> → Kali, Parrot gibi özel güvenlik dağıtımları mevcuttur.</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>💡 Not: Kali Linux, Debian tabanlıdır ve sızma testleri için özel araçlarla gelir.</p>
+</blockquote>
+<p>Araştırma Sorusu: Debian tabanlı ne demektir?</p>
+<p><strong>Güvenlik Perspektifiyle Örnek:</strong></p>
+<ul>
+<li>Bir sızma testçisi (penetration tester), ağdaki zayıflıkları tararken <code>nmap</code>, <code>netcat</code> gibi araçları kullanır — bu araçlar genellikle Linux ortamında çalışır.</li>
+<li>Sunucu güvenliği sağlanırken, sistem yöneticileri log dosyalarını analiz eder (<code>/var/log</code>), firewall yapılandırmaları yapar (<code>ufw</code>, <code>iptables</code>) — yine Linux üzerinde.</li>
+</ul>
+<h2 id="12-terminale-giris-cli-vs-gui">💻 <strong>1.2 Terminale Giriş – CLI vs GUI</strong></h2>
+<ul>
+<li>GUI (Graphical User Interface): Görsel arayüz (pencereler, ikonlar).</li>
+<li>CLI (Command Line Interface): Komut satırı.</li>
+</ul>
+<p>→Siber güvenlikte <strong>CLI tercih edilir</strong>, çünkü:</p>
+<ul>
+<li>Otomasyon mümkündür (bash scriptler),</li>
+<li>Ağ üzerinde uzaktan yönetim kolaydır (SSH),</li>
+<li>Log analizi, ağ taraması gibi işlemler terminal komutlarıyla yapılır.</li>
+</ul>
+<p><strong>Uygulama (Terminal Açılışı):</strong></p>
+<ul>
+<li>Öğrencilere terminal açtır:</li>
+</ul>
+<p><code>Ctrl + Alt + T</code></p>
+<pre><code class="language-bash"># Output:
+# user@kali:~$
+</code></pre>
+<ul>
+<li><code>user</code>: oturum açan kullanıcı</li>
+<li><code>@</code>: ayraç</li>
+<li><code>kali</code>: makine adı</li>
+<li><code>~</code>: home dizinini temsil eder</li>
+<li><code>$</code>: normal kullanıcı (root olsaydı <code>#</code> olurdu)</li>
+</ul>
+<h3 id="121-linux-terminal-bash-klavye-ksayollar">⚡ 1.2.1  Linux terminal (bash) klavye kısayolları</h3>
+<p>En çok kullanılan <strong>bash terminal kısayolları</strong></p>
+<table>
+<thead>
+<tr>
+<th>Kısayol</th>
+<th>Açıklama</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ctrl + C</code></td>
+<td>Çalışan komutu durdurur (SIGINT sinyali gönderir)</td>
+</tr>
+<tr>
+<td><code>Ctrl + Z</code></td>
+<td>Çalışan komutu askıya alır (background’a atar)</td>
+</tr>
+<tr>
+<td><code>fg</code></td>
+<td>Askıya alınan işlemi öne getirir</td>
+</tr>
+<tr>
+<td><code>Ctrl + D</code></td>
+<td>Terminal oturumunu kapatır (EOF gönderir)</td>
+</tr>
+<tr>
+<td><code>Ctrl + L</code></td>
+<td>Ekranı temizler (<code>clear</code> komutuna eşdeğer)</td>
+</tr>
+<tr>
+<td><code>Ctrl + A</code></td>
+<td>Satırın başına gider</td>
+</tr>
+<tr>
+<td><code>Ctrl + E</code></td>
+<td>Satırın sonuna gider</td>
+</tr>
+<tr>
+<td><code>Ctrl + U</code></td>
+<td>İmleçten satır başına kadar olan kısmı siler</td>
+</tr>
+<tr>
+<td><code>Ctrl + K</code></td>
+<td>İmleçten satır sonuna kadar siler</td>
+</tr>
+<tr>
+<td><code>Ctrl + W</code></td>
+<td>İmleçten önceki kelimeyi siler</td>
+</tr>
+<tr>
+<td><code>!!</code></td>
+<td>Son komutu yeniden çalıştırır</td>
+</tr>
+<tr>
+<td><code>!ls</code></td>
+<td>En son <code>ls</code> komutunu yeniden çalıştırır</td>
+</tr>
+<tr>
+<td><code>Tab</code></td>
+<td>Otomatik tamamlama</td>
+</tr>
+<tr>
+<td><code>↑ / ↓</code></td>
+<td>Komut geçmişinde gezme</td>
+</tr>
+<tr>
+<td><code>history</code></td>
+<td>Komut geçmişini gösterir</td>
+</tr>
+<tr>
+<td><code>Ctrl + R</code></td>
+<td>Geçmişte arama yapar (örnek: “ssh” yazarsan geçmişteki ssh komutlarını bulur)</td>
+</tr>
+<tr>
+<td><code>q</code></td>
+<td><code>man</code>, <code>less</code>, <code>more</code> gibi sayfa görüntüleyicilerde çıkış yapmak için vb. durumlarda aktif edilir.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="13-temel-linux-komutlar"><strong>⚙️ 1.3 Temel Linux Komutları</strong></h2>
+<h3 id="131-dizin-yonetimi-komutlar">📁 <strong>1.3.1 Dizin Yönetimi Komutları</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Komut</th>
+<th><strong>Description</strong></th>
+<th>Açıklama</th>
+<th>Örnek</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pwd</code></td>
+<td>Print current working directory.</td>
+<td>Şu an bulunduğun dizini gösterir.</td>
+<td><code>/home/student</code></td>
+</tr>
+<tr>
+<td><code>ls</code></td>
+<td>List files and directories.</td>
+<td>Klasördeki dosyaları listeler.</td>
+<td><code>ls -la</code> gizli dosyaları da gösterir.</td>
+</tr>
+<tr>
+<td><code>cd</code></td>
+<td>Change directory.</td>
+<td>Dizin değiştirir.</td>
+<td><code>cd /etc</code> veya <code>cd ..</code> (geri git)</td>
+</tr>
+<tr>
+<td><code>mkdir</code></td>
+<td>Create a new directory.</td>
+<td>Yeni klasör oluşturur.</td>
+<td><code>mkdir testdir</code></td>
+</tr>
+<tr>
+<td><code>rmdir</code></td>
+<td>Safely remove empty directories</td>
+<td>Boş klasörü siler.</td>
+<td><code>rmdir testdir</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>🧠Ekstra Bilgi:</strong> Linux’ta klasör ayırıcı <code>/</code> , Windows’ta <code>\</code> işaretidir.</p>
+<h3 id="132-dosya-goruntuleme-ve-icerik-komutlar">📄 <strong>1.3.2 Dosya Görüntüleme ve İçerik Komutları</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Komut</th>
+<th></th>
+<th>Açıklama</th>
+<th>Kullanım</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cat</code></td>
+<td>View the contents of a file.</td>
+<td>Dosya içeriğini gösterir.</td>
+<td><code>cat notes.txt</code></td>
+</tr>
+<tr>
+<td><code>less</code></td>
+<td></td>
+<td>Uzun dosyaları sayfa sayfa gösterir.</td>
+<td><code>less /etc/passwd</code></td>
+</tr>
+<tr>
+<td><code>head</code></td>
+<td></td>
+<td>Dosyanın ilk 10 satırını gösterir.</td>
+<td><code>head file.log</code></td>
+</tr>
+<tr>
+<td><code>tail</code></td>
+<td></td>
+<td>Son 10 satırı gösterir.</td>
+<td><code>tail file.log</code></td>
+</tr>
+<tr>
+<td><code>echo</code></td>
+<td></td>
+<td>Ekrana veya dosyaya yazı yazar.</td>
+<td><code>echo "Merhaba Linux"</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="133-bilgi-alma-komutlar">🔍 <strong>1.3.3 Bilgi Alma Komutları</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Komut</th>
+<th>Açıklama</th>
+<th>Kullanım</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>whoami</code></td>
+<td>Aktif kullanıcı adını gösterir.</td>
+<td><code>whoami</code></td>
+</tr>
+<tr>
+<td><code>history</code></td>
+<td>Komut geçmişini listeler.</td>
+<td><code>history</code></td>
+</tr>
+<tr>
+<td><code>man &lt;komut&gt;</code></td>
+<td>Komutun kullanım kılavuzunu gösterir.</td>
+<td><code>man ls</code></td>
+</tr>
+<tr>
+<td><code>clear</code></td>
+<td>Terminal ekranını temizler.</td>
+<td><code>clear</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="134-yaygn-hatalar-ve-acklamalar">⚠️ <strong>1.3.4 Yaygın Hatalar ve Açıklamaları</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Hata</th>
+<th>Açıklama</th>
+<th>Çözüm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bash: command not found</code></td>
+<td>Komut yanlış yazılmış.</td>
+<td>Yazım hatasını düzelt.</td>
+</tr>
+<tr>
+<td><code>Permission denied</code></td>
+<td>Yetki yok.</td>
+<td><code>sudo</code> ile çalıştır veya dosya izinlerini kontrol et.</td>
+</tr>
+<tr>
+<td><code>No such file or directory</code></td>
+<td>Belirtilen dosya yok.</td>
+<td>Yolun doğru olduğundan emin ol.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="135-help-komutu">❓ 1.3.5 Help Komutu</h3>
+<p><code>help</code> komutu, <strong>kabuk (shell)</strong> içinde yerleşik (built-in) komutlar hakkında bilgi verir.</p>
+<p>Yani bu komut, <strong>bash’in kendi komutları</strong> için yardım sağlar — sistemdeki harici programlar için değil.</p>
+<pre><code class="language-bash"># Bu, Bash shell’deki tüm yerleşik komutların listesini gösterir.
+help 
+
+# cd (change directory) komutu hakkında bilgi verirs
+help cd
+</code></pre>
+<h3 id="136-neden-help-ls-calsmaz">❓ 1.3.6 Neden <code>help ls</code> çalışmaz?</h3>
+<p>Çünkü <code>ls</code> bir shell built-in komutu değildir. <code>ls</code>, aslında <code>/bin/ls</code> konumunda bulunan <strong>ayrı bir programdır</strong> (GNU coreutils paketi içinde).
+Yani:</p>
+<ul>
+<li><code>help</code> sadece <strong>bash’in içindeki</strong> komutlar için geçerlidir.</li>
+<li><code>ls</code> gibi komutlar <strong>dış programlardır</strong>, dolayısıyla <code>help</code> onlarda işe yaramaz.</li>
+</ul>
+<p>🔹 Bunun yerine şunları kullanabilirsin:</p>
+<pre><code class="language-bash">man l
+ls --help
+</code></pre>
+<h3 id="137-ls-gibi-komutlar-nasl-calsr-nasl-ogrenebilirim">🧩 1.3.7. <code>ls</code> gibi komutlar nasıl çalışır, nasıl öğrenebilirim?</h3>
+<pre><code class="language-bash"># bu programın hangisinin kullanıldığı gösterilir.
+which ls
+which python 
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Komut</th>
+<th>Açıklama</th>
+<th>Örnek</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type &lt;komut&gt;</code></td>
+<td>Komutun türünü gösterir (built-in mi, external mi?)</td>
+<td><code>type ls</code></td>
+</tr>
+<tr>
+<td><code>which &lt;komut&gt;</code></td>
+<td>Komutun tam dosya yolunu gösterir</td>
+<td><code>which ls</code></td>
+</tr>
+<tr>
+<td><code>file $(which ls)</code></td>
+<td>Komut dosyasının türünü gösterir</td>
+<td><code>file $(which ls)</code></td>
+</tr>
+<tr>
+<td><code>man &lt;komut&gt;</code></td>
+<td>Manual (kılavuz) sayfasını açar</td>
+<td><code>man ls</code></td>
+</tr>
+<tr>
+<td><code>&lt;komut&gt; --help</code></td>
+<td>Hızlı yardım mesajı verir</td>
+<td><code>ls --help</code></td>
+</tr>
+</tbody>
+</table>
+<p>Örnek:</p>
+<pre><code class="language-bash">type ls
+# Çıktı: ls is /bin/ls
+</code></pre>
+<p>Yani <code>ls</code>, <code>/bin</code> dizininde bulunan bir <strong>binary program</strong>.</p>
+<h3 id="138-neden-help-komutu-veya-bu-komutlar-kullanmak-onemli">🧩 1.3.8. Neden <code>help</code> komutu veya bu komutları kullanmak önemli?</h3>
+<p>Siber güvenlikte <strong>bilgiye hızlı erişim ve self-learning (kendi kendine öğrenme)</strong> çok önemlidir.</p>
+<p>Çünkü her sistem farklıdır — her zaman internet erişimin olmayabilir (örneğin bir izole laboratuvar veya CTF ortamında).</p>
+<h3 id="136-peki-bu-kadar-komutu-nereden-bilecegim">🗒️ 1.3.6 Peki Bu Kadar Komutu Nereden Bileceğim?</h3>
+<p>CheatSheet’ler: Online ve Offline(PDF, image vb.) şeklinde kopya kağıdı denen şeyler mevcut.</p>
+<p>İnternette “Linux CheatSheet” olarak arayabilirsiniz. Web sayfası olarak bir kaç örnek:</p>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/linux-unix/linux-commands-cheat-sheet/">https://www.geeksforgeeks.org/linux-unix/linux-commands-cheat-sheet/</a></li>
+<li><a href="https://hostafrica.co.za/blog/linux/linux-commands/">https://hostafrica.co.za/blog/linux/linux-commands/</a></li>
+</ul>
+<blockquote>
+<p>Chatgpt vb. araçlara danışmadan, bu ve benzeri dökümanlardan kendi çabamızla bulmak öğrenmemizi pekişitirir.</p>
+</blockquote>
+<h2 id="14-uygulamal-alstrma">🧪 <strong>1.4 Uygulamalı Alıştırma</strong></h2>
+<h3 id="gorev-1">🎯 <strong>Görev 1:</strong></h3>
+<p>Kendi kullanıcı adınızı içeren bir dosya oluşturun ve içeriğini görüntüleyin.</p>
+<pre><code class="language-bash">cd ~                     # Ana dizine git
+mkdir Documents          # Documents klasörü oluştur
+cd Documents             # Klasöre gir
+echo &quot;Ben $(whoami)&quot; &gt; notes.txt  # Kullanıcı adını yaz
+cat notes.txt            # Dosya içeriğini görüntüle
+
+# Output:
+# Ben student
+</code></pre>
+<h3 id="gorev-2">🎯 <strong>Görev 2:</strong></h3>
+<pre><code class="language-bash"># Dosyayı Desktop klasörüne taşı:
+mv ~/Documents/notes.txt ~/Desktop/
+
+# Dosyayı sil:
+rm ~/Desktop/notes.txt
+</code></pre>
+<h3 id="gorev-3">🎯 <strong>Görev 3:</strong></h3>
+<p>Hangi python sürümü bilgisayarınızda yüklü?</p>
+<pre><code class="language-bash">which python
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Kopyaland\u0131", "clipboard.copy": "Kopyala", "search.result.more.one": "Bu sayfada 1 tane daha", "search.result.more.other": "Bu sayfada # tane daha", "search.result.none": "E\u015fle\u015fen dok\u00fcman bulunamad\u0131", "search.result.one": "1 dok\u00fcman bulundu", "search.result.other": "# dok\u00fcman bulundu", "search.result.placeholder": "Aramaya ba\u015flamak i\u00e7in yaz\u0131n", "search.result.term.missing": "Eksik", "select.version": "Versiyon se\u00e7"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
